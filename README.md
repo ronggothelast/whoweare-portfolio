@@ -61,3 +61,4 @@ See `.specify/memory/` for project constitutions:
 - `constitution.md` - Product vision & principles
 - `architecture_constitution.md` - Layer rules & invariants
 - `security_constitution.md` - Security policies
+
