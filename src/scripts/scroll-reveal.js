@@ -1,35 +1,19 @@
-/**
- * Scroll Reveal Module
- * Uses IntersectionObserver for performant viewport detection.
- * Respects prefers-reduced-motion.
- */
+const SEL = '.rv';
+const OBS_OPTS = { threshold: 0.1, rootMargin: '0px 0px -30px 0px' };
 
-const SELECTOR = '.reveal';
-const THRESHOLD = 0.1;
-const ROOT_MARGIN = '0px 0px -40px 0px';
+export function initReveal() {
+  const els = document.querySelectorAll(SEL);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) { els.forEach(e => e.classList.add('rv--in')); return; }
 
-function init() {
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const elements = document.querySelectorAll(SELECTOR);
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('rv--in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, OBS_OPTS);
 
-  if (prefersReduced) {
-    elements.forEach(el => el.classList.add('is-visible'));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: THRESHOLD, rootMargin: ROOT_MARGIN }
-  );
-
-  elements.forEach(el => observer.observe(el));
+  els.forEach(e => obs.observe(e));
 }
-
-export { init };

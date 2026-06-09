@@ -6,269 +6,219 @@
   <title>whoWeAre ?? - Premium Digital Studio</title>
   <meta name="description" content="We craft premium digital logic. Software house specializing in custom development, DevOps, and UI/UX design.">
 
-  <!-- Fonts -->
+  <!-- Fonts: Poppins (Exercism primary) + Source Code Pro (Exercism code) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Design Tokens (import order matters) -->
-  <link rel="stylesheet" href="src/tokens/colors.css">
-  <link rel="stylesheet" href="src/tokens/typography.css">
-  <link rel="stylesheet" href="src/tokens/spacing.css">
-
   <!-- Styles -->
-  <link rel="stylesheet" href="src/styles/reset.css">
-  <link rel="stylesheet" href="src/styles/base.css">
-  <link rel="stylesheet" href="src/styles/layout.css">
-  <link rel="stylesheet" href="src/styles/components.css">
+  <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
 
-  <!-- ═══════════ HEADER ═══════════ -->
-  <header class="header">
-    <div class="container header__inner">
-      <a href="#" class="header__logo" aria-label="whoWeAre home">
-        whoWeAre <span>??</span>
-      </a>
+  <!-- ═══ HEADER ═══ -->
+  <header class="hdr">
+    <div class="wrap hdr__inner">
+      <a href="#" class="hdr__logo" aria-label="whoWeAre home">whoWeAre <span>??</span></a>
 
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#home" class="nav__link nav__link--active">Home</a>
-        <a href="#services" class="nav__link">Services</a>
-        <a href="#team" class="nav__link">Team</a>
-        <a href="#projects" class="nav__link">Projects</a>
-        <a href="#contact" class="nav__cta btn-press">Contact</a>
+      <nav class="hdr__nav" aria-label="Main">
+        <a href="#home" class="hdr__link hdr__link--on">Home</a>
+        <a href="#services" class="hdr__link">Services</a>
+        <a href="#team" class="hdr__link">Team</a>
+        <a href="#projects" class="hdr__link">Projects</a>
+        <a href="#contact" class="hdr__btn">Contact</a>
       </nav>
 
-      <button
-        id="mobile-toggle"
-        class="mobile-toggle btn-press"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
+      <button id="burger" class="hdr__burger" aria-label="Menu" aria-expanded="false" aria-controls="mnav">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
 
-    <div id="mobile-menu" class="mobile-menu" role="menu">
-      <a href="#home" role="menuitem">Home</a>
-      <a href="#services" role="menuitem">Services</a>
-      <a href="#team" role="menuitem">Team</a>
-      <a href="#projects" role="menuitem">Projects</a>
-      <a href="#contact" role="menuitem">Contact</a>
+    <div id="mnav" class="mnav" role="menu">
+      <div class="wrap">
+        <a href="#home" role="menuitem">Home</a>
+        <a href="#services" role="menuitem">Services</a>
+        <a href="#team" role="menuitem">Team</a>
+        <a href="#projects" role="menuitem">Projects</a>
+        <a href="#contact" role="menuitem">Contact</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- ═══════════ HERO ═══════════ -->
+
+    <!-- ═══ HERO ═══ -->
     <section id="home" class="hero">
-      <div class="container">
-        <div style="max-width: 768px;">
-          <p class="hero__eyebrow reveal">Digital Studio</p>
-          <h1 class="hero__title reveal" data-delay="1">
-            We craft premium<br><em>digital logic.</em>
-          </h1>
-          <p class="hero__subtitle reveal" data-delay="2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <div class="hero__actions reveal" data-delay="3">
-            <a href="#projects" class="btn btn--primary btn-press">
-              View our work
-              <i class="fa-solid fa-arrow-right btn__icon"></i>
-            </a>
-            <a href="#contact" class="btn btn--outline btn-press">
-              Start a project
-            </a>
-          </div>
+      <div class="wrap hero__content">
+        <span class="hero__tag rv">Digital Studio</span>
+        <h1 class="hero__title rv rv--d1">
+          We craft premium<br><span class="hero__accent">digital logic.</span>
+        </h1>
+        <p class="hero__sub rv rv--d2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <div class="hero__actions rv rv--d3">
+          <a href="#projects" class="btn btn--primary">
+            View our work <i class="fa-solid fa-arrow-right btn__arr"></i>
+          </a>
+          <a href="#contact" class="btn btn--outline">Start a project</a>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ SERVICES ═══════════ -->
+    <!-- ═══ SERVICES ═══ -->
     <section id="services" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-header__title reveal">What we build</h2>
-          <p class="section-header__desc reveal" data-delay="1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-          </p>
+      <div class="wrap">
+        <div class="sec-hd">
+          <h2 class="sec-hd__title rv">What we build</h2>
+          <p class="sec-hd__sub rv rv--d1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
         </div>
 
-        <div class="services-grid">
-          <article class="service-card reveal">
-            <div class="service-card__icon service-card__icon--cyan">
+        <div class="tracks">
+          <article class="track rv">
+            <div class="track__icon track__icon--purple">
               <i class="fa-solid fa-code"></i>
             </div>
-            <h3 class="service-card__title">Custom Development</h3>
-            <p class="service-card__desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
-            </p>
+            <h3 class="track__title">Custom Development</h3>
+            <p class="track__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
           </article>
 
-          <article class="service-card reveal" data-delay="1">
-            <div class="service-card__icon service-card__icon--green">
+          <article class="track rv rv--d1">
+            <div class="track__icon track__icon--blue">
               <i class="fa-solid fa-server"></i>
             </div>
-            <h3 class="service-card__title">DevOps &amp; Infrastructure</h3>
-            <p class="service-card__desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
-            </p>
+            <h3 class="track__title">DevOps &amp; Infrastructure</h3>
+            <p class="track__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
           </article>
 
-          <article class="service-card reveal" data-delay="2">
-            <div class="service-card__icon service-card__icon--cyan">
+          <article class="track rv rv--d2">
+            <div class="track__icon track__icon--green">
               <i class="fa-solid fa-pen-ruler"></i>
             </div>
-            <h3 class="service-card__title">UI/UX Design</h3>
-            <p class="service-card__desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
-            </p>
+            <h3 class="track__title">UI/UX Design</h3>
+            <p class="track__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ PROJECTS ═══════════ -->
-    <section id="projects" class="section section--bordered">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-header__title reveal">Selected work</h2>
-          <p class="section-header__desc reveal" data-delay="1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-          </p>
+    <!-- ═══ PROJECTS ═══ -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <div class="sec-hd">
+          <h2 class="sec-hd__title rv">Selected work</h2>
+          <p class="sec-hd__sub rv rv--d1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
         </div>
 
         <!-- Project 1 -->
-        <article class="project reveal">
-          <div class="project__preview project__preview--1">
-            <span class="project__preview-label">Preview</span>
+        <article class="proj rv">
+          <div class="proj__img proj__img--purple">
+            <span class="proj__img-label">Preview</span>
           </div>
-          <div class="project__content">
-            <div class="project__meta">
-              <span class="tag tag--cyan">Next.js</span>
-              <span class="tag tag--green">PostgreSQL</span>
-              <span class="tag tag--neutral">Tailwind</span>
+          <div class="proj__body">
+            <div class="proj__tags">
+              <span class="pill pill--purple">Next.js</span>
+              <span class="pill pill--green">PostgreSQL</span>
+              <span class="pill pill--blue">Tailwind</span>
             </div>
-            <h3 class="project__title">Meridian Platform</h3>
-            <p class="project__desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-            </p>
-            <a href="#" class="btn btn--ghost">
-              View case study <i class="fa-solid fa-arrow-right btn__icon"></i>
-            </a>
+            <h3 class="proj__title">Meridian Platform</h3>
+            <p class="proj__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <a href="#" class="btn btn--link">View case study <i class="fa-solid fa-arrow-right btn__arr"></i></a>
           </div>
         </article>
 
         <!-- Project 2 -->
-        <article class="project reveal">
-          <div class="project__content">
-            <div class="project__meta">
-              <span class="tag tag--green">Go</span>
-              <span class="tag tag--cyan">gRPC</span>
-              <span class="tag tag--neutral">Kubernetes</span>
+        <article class="proj rv">
+          <div class="proj__body">
+            <div class="proj__tags">
+              <span class="pill pill--green">Go</span>
+              <span class="pill pill--purple">gRPC</span>
+              <span class="pill pill--blue">Kubernetes</span>
             </div>
-            <h3 class="project__title">Vaultstream Engine</h3>
-            <p class="project__desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-            </p>
-            <a href="#" class="btn btn--ghost">
-              View case study <i class="fa-solid fa-arrow-right btn__icon"></i>
-            </a>
+            <h3 class="proj__title">Vaultstream Engine</h3>
+            <p class="proj__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <a href="#" class="btn btn--link">View case study <i class="fa-solid fa-arrow-right btn__arr"></i></a>
           </div>
-          <div class="project__preview project__preview--2">
-            <span class="project__preview-label">Preview</span>
+          <div class="proj__img proj__img--blue">
+            <span class="proj__img-label">Preview</span>
           </div>
         </article>
 
         <!-- Project 3 -->
-        <article class="project reveal">
-          <div class="project__preview project__preview--3">
-            <span class="project__preview-label">Preview</span>
+        <article class="proj rv">
+          <div class="proj__img proj__img--green">
+            <span class="proj__img-label">Preview</span>
           </div>
-          <div class="project__content">
-            <div class="project__meta">
-              <span class="tag tag--cyan">React</span>
-              <span class="tag tag--neutral">WebGL</span>
-              <span class="tag tag--green">Three.js</span>
+          <div class="proj__body">
+            <div class="proj__tags">
+              <span class="pill pill--purple">React</span>
+              <span class="pill pill--blue">WebGL</span>
+              <span class="pill pill--green">Three.js</span>
             </div>
-            <h3 class="project__title">Lumina Dashboard</h3>
-            <p class="project__desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-            </p>
-            <a href="#" class="btn btn--ghost">
-              View case study <i class="fa-solid fa-arrow-right btn__icon"></i>
-            </a>
+            <h3 class="proj__title">Lumina Dashboard</h3>
+            <p class="proj__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <a href="#" class="btn btn--link">View case study <i class="fa-solid fa-arrow-right btn__arr"></i></a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- ═══════════ TEAM ═══════════ -->
-    <section id="team" class="section section--bordered">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-header__title reveal">The team</h2>
-          <p class="section-header__desc reveal" data-delay="1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-          </p>
+    <!-- ═══ TEAM ═══ -->
+    <section id="team" class="section">
+      <div class="wrap">
+        <div class="sec-hd">
+          <h2 class="sec-hd__title rv">The team</h2>
+          <p class="sec-hd__sub rv rv--d1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
         </div>
 
-        <div class="team-grid">
-          <article class="team-card reveal">
-            <div class="team-card__avatar">
-              <div class="team-card__avatar-initials team-card__avatar-initials--cyan">AR</div>
+        <div class="team">
+          <article class="member rv">
+            <div class="member__avatar">
+              <div class="member__initials member__initials--p">AR</div>
             </div>
-            <h3 class="team-card__name">Aldo Raine</h3>
-            <p class="team-card__role">Lead Engineer</p>
-            <p class="team-card__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3 class="member__name">Aldo Raine</h3>
+            <p class="member__role">Lead Engineer</p>
+            <p class="member__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </article>
 
-          <article class="team-card reveal" data-delay="1">
-            <div class="team-card__avatar">
-              <div class="team-card__avatar-initials team-card__avatar-initials--green">NK</div>
+          <article class="member rv rv--d1">
+            <div class="member__avatar">
+              <div class="member__initials member__initials--b">NK</div>
             </div>
-            <h3 class="team-card__name">Nina Koroleva</h3>
-            <p class="team-card__role">Design Director</p>
-            <p class="team-card__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3 class="member__name">Nina Koroleva</h3>
+            <p class="member__role">Design Director</p>
+            <p class="member__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </article>
 
-          <article class="team-card reveal" data-delay="2">
-            <div class="team-card__avatar">
-              <div class="team-card__avatar-initials team-card__avatar-initials--cyan">TS</div>
+          <article class="member rv rv--d2">
+            <div class="member__avatar">
+              <div class="member__initials member__initials--g">TS</div>
             </div>
-            <h3 class="team-card__name">Tomoko Sato</h3>
-            <p class="team-card__role">DevOps Architect</p>
-            <p class="team-card__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3 class="member__name">Tomoko Sato</h3>
+            <p class="member__role">DevOps Architect</p>
+            <p class="member__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </article>
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- ═══════════ FOOTER ═══════════ -->
-  <footer id="contact" class="footer">
-    <div class="container footer__inner">
-      <p class="footer__copy">
-        &copy; 2026 <strong>whoWeAre</strong> <span>??</span>
-      </p>
-      <div class="footer__socials">
-        <a href="#" class="footer__social-link" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="#" class="footer__social-link" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="#" class="footer__social-link" aria-label="Twitter">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
+  <!-- ═══ FOOTER ═══ -->
+  <footer id="contact" class="foot">
+    <div class="wrap foot__inner">
+      <p class="foot__copy">&copy; 2026 <b>whoWeAre</b> <span>??</span></p>
+      <div class="foot__links">
+        <a href="#" class="foot__link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="foot__link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="foot__link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts (ES Modules) -->
   <script type="module" src="src/scripts/main.js"></script>
 </body>
 </html>
